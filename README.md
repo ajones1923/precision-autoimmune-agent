@@ -1,5 +1,10 @@
 # Precision Autoimmune Intelligence Agent
 
+
+![Architecture Infographic](docs/images/infographic.jpg)
+
+*Source: [precision-autoimmune-agent](https://github.com/ajones1923/precision-autoimmune-agent)*
+
 **Part of the HCLS AI Factory -- Patient DNA to Drug Candidates**
 
 A multi-collection RAG-powered clinical decision-support agent for autoimmune disease analysis. The agent interprets autoantibody panels, HLA typing, biomarker trends, and genomic data to provide integrated autoimmune assessments including disease activity scoring, flare prediction, and biologic therapy recommendations with pharmacogenomic context. It is designed to surface diagnostic patterns across fragmented clinical records spanning years of multi-specialist visits, addressing the diagnostic odyssey that autoimmune patients commonly face.
