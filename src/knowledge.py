@@ -104,7 +104,7 @@ HLA_DISEASE_ASSOCIATIONS: Dict[str, List[Dict[str, Any]]] = {
         {"disease": "rheumatoid_arthritis", "odds_ratio": 3.5, "pmid": "20301572",
          "note": "Shared epitope -- common in East Asian populations"},
     ],
-    "HLA-DRB1*01:01": [
+    "HLA-DRB1*01:01": [  # noqa: F601
         {"disease": "rheumatoid_arthritis", "odds_ratio": 2.1, "pmid": "20301572",
          "note": "Shared epitope -- non-DRB1*04 RA susceptibility"},
         {"disease": "systemic_sclerosis", "odds_ratio": 2.0, "pmid": "24098041"},

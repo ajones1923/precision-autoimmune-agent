@@ -671,7 +671,7 @@ class TestStreamingEndpoint:
             json={"question": "What about SLE?"},
         )
         text = resp.text
-        lines = [l for l in text.strip().split("\n") if l.startswith("data:")]
+        lines = [l for l in text.strip().split("\n") if l.startswith("data:")]  # noqa: E741
         # Should have at least the data chunks plus [DONE]
         assert len(lines) >= 2
         # Last data line should be [DONE]
@@ -682,7 +682,7 @@ class TestStreamingEndpoint:
             "/query/stream",
             json={"question": "What about SLE?"},
         )
-        lines = [l for l in resp.text.strip().split("\n") if l.startswith("data:")]
+        lines = [l for l in resp.text.strip().split("\n") if l.startswith("data:")]  # noqa: E741
         for line in lines:
             payload = line[len("data:"):].strip()
             if payload == "[DONE]":

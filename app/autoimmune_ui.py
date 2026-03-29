@@ -479,10 +479,10 @@ with tabs[1]:
             st.warning("Please enter a patient ID.")
         else:
             biomarkers = {}
-            if crp > 0: biomarkers["CRP"] = crp
-            if esr > 0: biomarkers["ESR"] = esr
-            if c3 > 0: biomarkers["complement_C3"] = c3
-            if c4 > 0: biomarkers["complement_C4"] = c4
+            if crp > 0: biomarkers["CRP"] = crp  # noqa: E701
+            if esr > 0: biomarkers["ESR"] = esr  # noqa: E701
+            if c3 > 0: biomarkers["complement_C3"] = c3  # noqa: E701
+            if c4 > 0: biomarkers["complement_C4"] = c4  # noqa: E701
 
             try:
                 profile = AutoimmunePatientProfile(
