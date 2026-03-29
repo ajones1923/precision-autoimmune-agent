@@ -6,27 +6,26 @@ All external dependencies (pymilvus) are mocked so tests run without Milvus.
 
 from __future__ import annotations
 
-from unittest.mock import MagicMock, patch, PropertyMock
+from unittest.mock import MagicMock, patch
 
 import pytest
+from pymilvus import DataType, MilvusException
 
 # We need to mock pymilvus before importing the module under test in some cases,
 # but since collections.py imports pymilvus at module level and defines schemas
 # using real pymilvus types, we import normally and mock at call sites.
 from src.collections import (
+    _DIM,
     COLLECTION_SCHEMAS,
     INDEX_PARAMS,
     SEARCH_PARAMS,
     AutoimmuneCollectionManager,
-    _DIM,
     _embedding,
     _float,
     _int,
     _pk,
     _varchar,
 )
-from pymilvus import DataType, MilvusException
-
 
 # ── Schema / helper tests ────────────────────────────────────────────────
 
@@ -322,7 +321,7 @@ class TestCollectionManagerCreateCollection:
 
         mgr = AutoimmuneCollectionManager()
         mgr._connected = True
-        result = mgr.create_collection("autoimmune_patient_labs", drop_existing=False)
+        mgr.create_collection("autoimmune_patient_labs", drop_existing=False)
 
         mock_utility.drop_collection.assert_not_called()
         mock_coll.load.assert_called_once()

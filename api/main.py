@@ -23,7 +23,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, HTTPException, Request, UploadFile, File, Form
+from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 from loguru import logger
@@ -33,16 +33,15 @@ from pydantic import BaseModel
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from config.settings import settings
 from config.logging import configure_logging
-from src.collections import AutoimmuneCollectionManager
-from src.rag_engine import AutoimmuneRAGEngine
+from config.settings import settings
 from src.agent import AutoimmuneAgent
-from src.document_processor import DocumentProcessor
+from src.collections import AutoimmuneCollectionManager
 from src.diagnostic_engine import DiagnosticEngine
-from src.timeline_builder import TimelineBuilder
+from src.document_processor import DocumentProcessor
 from src.models import AutoimmunePatientProfile
-
+from src.rag_engine import AutoimmuneRAGEngine
+from src.timeline_builder import TimelineBuilder
 
 # ── Global state ──────────────────────────────────────────────────────────
 _state: Dict[str, Any] = {}
@@ -320,13 +319,13 @@ async def integrated_assessment(request: dict):
     """
     try:
         from src.cross_modal import (
-            query_oncology_agent,
+            integrate_cross_agent_results,
+            query_biomarker_agent,
             query_cardiology_agent,
             query_neurology_agent,
+            query_oncology_agent,
             query_pgx_agent,
-            query_biomarker_agent,
             query_trial_agent,
-            integrate_cross_agent_results,
         )
 
         patient_profile = request.get("patient_profile", {})

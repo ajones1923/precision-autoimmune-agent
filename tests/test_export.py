@@ -10,6 +10,7 @@ All tests run offline — no external services required.
 """
 
 import json
+
 import pytest
 
 from src.export import AutoimmuneExporter
@@ -22,7 +23,6 @@ from src.models import (
     FlarePredictor,
     FlareRisk,
 )
-
 
 # ── Fixtures ──────────────────────────────────────────────────────────
 

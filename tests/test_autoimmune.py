@@ -2,29 +2,24 @@
 
 import pytest
 
+from src.agent import AutoimmuneAgent
+from src.knowledge import (
+    AUTOANTIBODY_DISEASE_MAP,
+    BIOLOGIC_THERAPIES,
+    DISEASE_ACTIVITY_THRESHOLDS,
+    HLA_DISEASE_ASSOCIATIONS,
+    KNOWLEDGE_VERSION,
+)
 from src.models import (
-    AutoimmuneAnalysisResult,
-    AutoimmuneDisease,
-    AutoimmunePatientProfile,
     AutoantibodyPanel,
     AutoantibodyResult,
-    BiologicTherapy,
+    AutoimmuneDisease,
+    AutoimmunePatientProfile,
     DiseaseActivityLevel,
-    DiseaseActivityScore,
     FlarePredictor,
     FlareRisk,
     HLAProfile,
 )
-from src.agent import AutoimmuneAgent
-from src.knowledge import (
-    HLA_DISEASE_ASSOCIATIONS,
-    AUTOANTIBODY_DISEASE_MAP,
-    BIOLOGIC_THERAPIES,
-    DISEASE_ACTIVITY_THRESHOLDS,
-    FLARE_BIOMARKER_PATTERNS,
-    KNOWLEDGE_VERSION,
-)
-
 
 # =====================================================================
 # Fixtures

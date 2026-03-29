@@ -9,9 +9,12 @@ The system should detect: Relapsing-remitting MS, HLA-DRB1*15:01 risk.
 """
 
 import os
+
 from pdf_engine import (
-    generate_progress_note, generate_lab_report, generate_imaging_report,
-    generate_genetic_report, PROVIDERS,
+    PROVIDERS,
+    generate_imaging_report,
+    generate_lab_report,
+    generate_progress_note,
 )
 
 PATIENT = {

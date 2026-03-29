@@ -12,11 +12,10 @@ Date: March 2026
 
 from __future__ import annotations
 
-import json
 import io
+import json
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
-from pathlib import Path
 
 from loguru import logger
 
@@ -181,11 +180,11 @@ class AutoimmuneExporter:
     ) -> bytes:
         """Generate a styled PDF report. Returns bytes for download."""
         try:
-            from reportlab.lib.pagesizes import letter
-            from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
             from reportlab.lib.colors import HexColor
-            from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+            from reportlab.lib.pagesizes import letter
+            from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
             from reportlab.lib.units import inch
+            from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
         except ImportError:
             # Fallback: return markdown as plain text PDF-like bytes
             logger.warning("reportlab not installed — returning Markdown as fallback")

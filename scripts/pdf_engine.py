@@ -14,19 +14,20 @@ Author: Adam Jones
 Date: March 2026
 """
 
-import os
-from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Dict, List
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import (
-    Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle,
-    HRFlowable, KeepTogether,
+    HRFlowable,
+    Paragraph,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
 )
-
 
 # =====================================================================
 # Clinic / Provider Database

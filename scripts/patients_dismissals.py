@@ -19,9 +19,12 @@ Date: March 2026
 """
 
 import os
+
 from pdf_engine import (
-    generate_progress_note, generate_lab_report, generate_referral_letter,
-    PROVIDERS, CLINICS,
+    PROVIDERS,
+    generate_lab_report,
+    generate_progress_note,
+    generate_referral_letter,
 )
 
 # Patient references (same as other files)

@@ -14,8 +14,7 @@ All tests run offline — no external services required.
 
 import pytest
 
-from src.timeline_builder import TimelineBuilder, EVENT_PATTERNS, DATE_PATTERNS
-
+from src.timeline_builder import TimelineBuilder
 
 # ── Fixtures ──────────────────────────────────────────────────────────
 

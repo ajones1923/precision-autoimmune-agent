@@ -23,47 +23,54 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Core patient generators
-from patient_sarah import generate as gen_sarah
-from patient_maya import generate as gen_maya
-from patients_345 import generate_david, generate_linda, generate_rachel
-
-# Enhanced timeline documents (gap-filling, post-dx monitoring)
-from patients_david_enhanced import generate_david_enhanced
-from patients_linda_enhanced import generate_linda_enhanced
-from patients_rachel_enhanced import generate_rachel_enhanced
-
-# Dismissal documents (symptoms attributed to wrong diagnoses)
-from patients_dismissals import (
-    generate_maya_dismissals, generate_sarah_dismissals,
-    generate_linda_dismissals, generate_david_dismissals,
-)
-
-# Medication reconciliation (polypharmacy revealing diagnostic signal)
-from patients_med_lists import (
-    generate_sarah_med_list, generate_maya_med_list,
-    generate_david_med_list, generate_linda_med_list,
-    generate_rachel_med_list,
-)
-
-# Cross-specialist referral letters
-from patients_referrals import (
-    generate_sarah_referrals, generate_maya_referrals,
-    generate_david_referrals, generate_linda_referrals,
-    generate_rachel_referrals,
-)
-
-# Additional specialist reports and subtle labs
-from patients_additional import (
-    generate_rachel_genetics, generate_maya_additional,
-    generate_linda_additional, generate_sarah_additional,
-    generate_david_additional,
-)
-
 # New disease type patient generators
 from patient_emma import generate as gen_emma
 from patient_james import generate as gen_james
 from patient_karen import generate as gen_karen
+from patient_maya import generate as gen_maya
 from patient_michael import generate as gen_michael
+from patient_sarah import generate as gen_sarah
+from patients_345 import generate_david, generate_linda, generate_rachel
+
+# Additional specialist reports and subtle labs
+from patients_additional import (
+    generate_david_additional,
+    generate_linda_additional,
+    generate_maya_additional,
+    generate_rachel_genetics,
+    generate_sarah_additional,
+)
+
+# Enhanced timeline documents (gap-filling, post-dx monitoring)
+from patients_david_enhanced import generate_david_enhanced
+
+# Dismissal documents (symptoms attributed to wrong diagnoses)
+from patients_dismissals import (
+    generate_david_dismissals,
+    generate_linda_dismissals,
+    generate_maya_dismissals,
+    generate_sarah_dismissals,
+)
+from patients_linda_enhanced import generate_linda_enhanced
+
+# Medication reconciliation (polypharmacy revealing diagnostic signal)
+from patients_med_lists import (
+    generate_david_med_list,
+    generate_linda_med_list,
+    generate_maya_med_list,
+    generate_rachel_med_list,
+    generate_sarah_med_list,
+)
+from patients_rachel_enhanced import generate_rachel_enhanced
+
+# Cross-specialist referral letters
+from patients_referrals import (
+    generate_david_referrals,
+    generate_linda_referrals,
+    generate_maya_referrals,
+    generate_rachel_referrals,
+    generate_sarah_referrals,
+)
 
 DEMO_DATA_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "demo_data"

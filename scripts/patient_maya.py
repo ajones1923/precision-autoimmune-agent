@@ -9,9 +9,14 @@ The system should detect: POTS + hEDS + MCAS triad, TPSAB1 duplication.
 """
 
 import os
+
 from pdf_engine import (
-    generate_progress_note, generate_lab_report, generate_imaging_report,
-    generate_pathology_report, generate_genetic_report, PROVIDERS,
+    PROVIDERS,
+    generate_genetic_report,
+    generate_imaging_report,
+    generate_lab_report,
+    generate_pathology_report,
+    generate_progress_note,
 )
 
 PATIENT = {

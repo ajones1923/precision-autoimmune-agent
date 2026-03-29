@@ -13,9 +13,12 @@ Date: March 2026
 """
 
 import os
+
 from pdf_engine import (
-    generate_progress_note, generate_lab_report, generate_imaging_report,
-    generate_genetic_report, PROVIDERS,
+    PROVIDERS,
+    generate_genetic_report,
+    generate_lab_report,
+    generate_progress_note,
 )
 
 RACHEL = {
@@ -119,7 +122,7 @@ def generate_rachel_genetics(output_dir: str):
             "regarding autoimmune risk in offspring"
         ),
     )
-    print(f"    + Rachel genetics report: 1 document added")
+    print("    + Rachel genetics report: 1 document added")
 
 
 def generate_maya_additional(output_dir: str):
@@ -211,7 +214,7 @@ def generate_maya_additional(output_dir: str):
         },
     )
 
-    print(f"    + Maya additional reports: 2 documents added")
+    print("    + Maya additional reports: 2 documents added")
 
 
 def generate_linda_additional(output_dir: str):
@@ -273,7 +276,7 @@ def generate_linda_additional(output_dir: str):
         },
     )
 
-    print(f"    + Linda additional reports: 2 documents added")
+    print("    + Linda additional reports: 2 documents added")
 
 
 def generate_sarah_additional(output_dir: str):
@@ -365,7 +368,7 @@ def generate_sarah_additional(output_dir: str):
         },
     )
 
-    print(f"    + Sarah additional reports: 2 documents added")
+    print("    + Sarah additional reports: 2 documents added")
 
 
 def generate_david_additional(output_dir: str):
@@ -393,4 +396,4 @@ def generate_david_additional(output_dir: str):
         }],
     )
 
-    print(f"    + David additional reports: 1 document added")
+    print("    + David additional reports: 1 document added")

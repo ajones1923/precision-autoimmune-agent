@@ -10,7 +10,8 @@ Date: March 2026
 """
 
 import os
-from pdf_engine import generate_referral_letter, PROVIDERS, CLINICS
+
+from pdf_engine import PROVIDERS, generate_referral_letter
 
 SARAH = {
     "name": "Sarah Mitchell",
@@ -124,7 +125,7 @@ def generate_sarah_referrals(output_dir: str):
         urgency="URGENT",
     )
 
-    print(f"    + Sarah referral letters: 2 documents added")
+    print("    + Sarah referral letters: 2 documents added")
 
 
 def generate_maya_referrals(output_dir: str):
@@ -263,7 +264,7 @@ def generate_maya_referrals(output_dir: str):
         urgency="Routine",
     )
 
-    print(f"    + Maya referral letters: 3 documents added")
+    print("    + Maya referral letters: 3 documents added")
 
 
 def generate_david_referrals(output_dir: str):
@@ -309,7 +310,7 @@ def generate_david_referrals(output_dir: str):
         urgency="URGENT",
     )
 
-    print(f"    + David referral letters: 1 document added")
+    print("    + David referral letters: 1 document added")
 
 
 def generate_linda_referrals(output_dir: str):
@@ -402,7 +403,7 @@ def generate_linda_referrals(output_dir: str):
         urgency="Routine",
     )
 
-    print(f"    + Linda referral letters: 2 documents added")
+    print("    + Linda referral letters: 2 documents added")
 
 
 def generate_rachel_referrals(output_dir: str):
@@ -461,4 +462,4 @@ def generate_rachel_referrals(output_dir: str):
         urgency="URGENT",
     )
 
-    print(f"    + Rachel referral letters: 1 document added")
+    print("    + Rachel referral letters: 1 document added")

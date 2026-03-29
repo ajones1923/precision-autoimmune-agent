@@ -15,27 +15,27 @@ Date: March 2026
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 from loguru import logger
 
-from .models import (
-    AutoimmuneAnalysisResult,
-    AutoimmunePatientProfile,
-    AutoantibodyPanel,
-    BiologicTherapy,
-    DiseaseActivityLevel,
-    DiseaseActivityScore,
-    FlarePredictor,
-    FlareRisk,
-    HLAProfile,
-)
 from .knowledge import (
     AUTOANTIBODY_DISEASE_MAP,
     BIOLOGIC_THERAPIES,
     DISEASE_ACTIVITY_THRESHOLDS,
     FLARE_BIOMARKER_PATTERNS,
     HLA_DISEASE_ASSOCIATIONS,
+)
+from .models import (
+    AutoantibodyPanel,
+    AutoimmuneAnalysisResult,
+    AutoimmunePatientProfile,
+    BiologicTherapy,
+    DiseaseActivityLevel,
+    DiseaseActivityScore,
+    FlarePredictor,
+    FlareRisk,
+    HLAProfile,
 )
 
 

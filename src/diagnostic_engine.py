@@ -16,20 +16,13 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
-from loguru import logger
-
 from .knowledge import (
     AUTOANTIBODY_DISEASE_MAP,
-    DISEASE_ACTIVITY_THRESHOLDS,
     HLA_DISEASE_ASSOCIATIONS,
 )
 from .models import (
     AutoimmuneDisease,
-    AutoimmunePatientProfile,
-    DiseaseActivityLevel,
-    DiseaseActivityScore,
 )
-
 
 # ── ACR/EULAR Classification Criteria ────────────────────────────────────
 
@@ -491,7 +484,6 @@ class DiagnosticEngine:
         detected = []
 
         for syndrome_name, criteria in OVERLAP_SYNDROMES.items():
-            matches = []
 
             # Check required antibodies
             required = criteria.get("required", [])
@@ -503,7 +495,7 @@ class DiagnosticEngine:
             marker_matches = [m for m in shared if m in positive_antibodies]
 
             # Check diagnostic markers
-            diag_markers = criteria.get("diagnostic_markers", [])
+            criteria.get("diagnostic_markers", [])
 
             if marker_matches or required:
                 detected.append({

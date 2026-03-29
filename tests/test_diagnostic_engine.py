@@ -14,12 +14,9 @@ All tests run offline — no external services required.
 import pytest
 
 from src.diagnostic_engine import (
-    CLASSIFICATION_CRITERIA,
-    OVERLAP_SYNDROMES,
     DiagnosticEngine,
 )
-from src.models import AutoimmuneDisease, DiseaseActivityLevel
-
+from src.models import AutoimmuneDisease
 
 # ── Fixtures ──────────────────────────────────────────────────────────
 

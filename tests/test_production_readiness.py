@@ -10,6 +10,7 @@ Date: March 2026
 
 import sys
 from pathlib import Path
+
 import pytest
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -191,7 +192,6 @@ class TestKnowledgeBaseCompleteness:
     def test_autoantibody_names_match_knowledge_base(self):
         """Verify document_processor AUTOANTIBODY_NAMES covers knowledge base."""
         from src.document_processor import AUTOANTIBODY_NAMES
-        from src.knowledge import AUTOANTIBODY_DISEASE_MAP
         names_lower = {n.lower() for n in AUTOANTIBODY_NAMES}
         # Check key antibodies from the knowledge base are present
         key_antibodies = ["ANA", "anti-dsDNA", "anti-Smith", "RF", "anti-CCP"]
@@ -273,7 +273,7 @@ class TestModelEdgeCases:
             )
 
     def test_flare_risk_score_bounds(self):
-        from src.models import FlarePredictor, AutoimmuneDisease, DiseaseActivityLevel, FlareRisk
+        from src.models import AutoimmuneDisease, DiseaseActivityLevel, FlarePredictor, FlareRisk
         with pytest.raises(Exception):
             FlarePredictor(
                 disease=AutoimmuneDisease.RHEUMATOID_ARTHRITIS,

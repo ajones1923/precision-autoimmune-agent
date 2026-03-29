@@ -5,11 +5,10 @@ Pydantic BaseSettings with AUTO_ env prefix.
 All values can be overridden via environment variables or .env file.
 """
 
-import re
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict
 
-from pydantic import Field, model_validator
+from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 

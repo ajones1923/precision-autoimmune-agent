@@ -8,24 +8,19 @@ so tests run without any external services.
 from __future__ import annotations
 
 import threading
-from collections import deque
-from contextlib import contextmanager
-from unittest.mock import MagicMock, patch, PropertyMock
+from unittest.mock import MagicMock, patch
 
-import numpy as np
 import pytest
 
 from src.rag_engine import (
-    DISEASE_KEYWORDS,
+    _COMPARATIVE_RE,
+    _SAFE_FILTER_RE,
     SYSTEM_PROMPT,
     AutoimmuneRAGEngine,
     CrossCollectionResult,
     SearchHit,
-    _COMPARATIVE_RE,
-    _SAFE_FILTER_RE,
     _sanitize_filter_value,
 )
-
 
 # ── Fixtures ─────────────────────────────────────────────────────────────
 

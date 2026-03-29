@@ -11,7 +11,8 @@ Date: March 2026
 """
 
 import os
-from pdf_engine import generate_medication_list, PROVIDERS
+
+from pdf_engine import generate_medication_list
 
 SARAH = {
     "name": "Sarah Mitchell",
@@ -148,7 +149,7 @@ def generate_sarah_med_list(output_dir: str):
             "medications as prescribed. Prednisone taper from ER visit: completed 5-day course."
         ),
     )
-    print(f"    + Sarah medication reconciliation: 1 document added")
+    print("    + Sarah medication reconciliation: 1 document added")
 
 
 def generate_maya_med_list(output_dir: str):
@@ -257,7 +258,7 @@ def generate_maya_med_list(output_dir: str):
             "was told to 'give it more time.'"
         ),
     )
-    print(f"    + Maya medication reconciliation: 1 document added")
+    print("    + Maya medication reconciliation: 1 document added")
 
 
 def generate_david_med_list(output_dir: str):
@@ -343,7 +344,7 @@ def generate_david_med_list(output_dir: str):
             "underlying diagnosis."
         ),
     )
-    print(f"    + David medication reconciliation: 1 document added")
+    print("    + David medication reconciliation: 1 document added")
 
 
 def generate_linda_med_list(output_dir: str):
@@ -462,7 +463,7 @@ def generate_linda_med_list(output_dir: str):
             "This level of consumption is unusual for age-related dry eye."
         ),
     )
-    print(f"    + Linda medication reconciliation: 1 document added")
+    print("    + Linda medication reconciliation: 1 document added")
 
 
 def generate_rachel_med_list(output_dir: str):
@@ -538,4 +539,4 @@ def generate_rachel_med_list(output_dir: str):
             "need systemic immunosuppression. Ibuprofen alone is inadequate."
         ),
     )
-    print(f"    + Rachel medication reconciliation: 1 document added")
+    print("    + Rachel medication reconciliation: 1 document added")

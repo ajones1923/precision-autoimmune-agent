@@ -15,9 +15,6 @@ import re
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from loguru import logger
-
-
 # Event type classification patterns
 EVENT_PATTERNS = {
     "symptom_onset": [

@@ -21,7 +21,6 @@ from typing import Any, Dict, Generator, List, Optional
 
 from loguru import logger
 
-
 # ── Data classes ──────────────────────────────────────────────────────────
 
 @dataclass
@@ -248,10 +247,10 @@ class AutoimmuneRAGEngine:
 
         try:
             from .knowledge import (
-                HLA_DISEASE_ASSOCIATIONS,
                 AUTOANTIBODY_DISEASE_MAP,
                 BIOLOGIC_THERAPIES,
                 FLARE_BIOMARKER_PATTERNS,
+                HLA_DISEASE_ASSOCIATIONS,
             )
         except ImportError:
             return ""
@@ -367,7 +366,7 @@ class AutoimmuneRAGEngine:
 
         for coll_name, coll_hits in raw_results.items():
             weight = config.get(coll_name, {}).get("weight", 0.05)
-            label = config.get(coll_name, {}).get("label", coll_name)
+            config.get(coll_name, {}).get("label", coll_name)
 
             for h in coll_hits:
                 hit_id = h["id"]
@@ -382,7 +381,7 @@ class AutoimmuneRAGEngine:
                     continue
                 seen_texts.add(text_hash)
 
-                weighted_score = min(h["score"] * (1 + weight), 1.0)
+                min(h["score"] * (1 + weight), 1.0)
                 relevance = self._score_relevance(h["score"])
 
                 hits.append(SearchHit(

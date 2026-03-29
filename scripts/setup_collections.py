@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from loguru import logger
+
 from config.settings import settings
 from src.collections import AutoimmuneCollectionManager
 
@@ -23,11 +24,11 @@ from src.collections import AutoimmuneCollectionManager
 def seed_knowledge(cm: AutoimmuneCollectionManager, embedder):
     """Seed collections with static knowledge base data."""
     from src.knowledge import (
-        HLA_DISEASE_ASSOCIATIONS,
         AUTOANTIBODY_DISEASE_MAP,
         BIOLOGIC_THERAPIES,
         DISEASE_ACTIVITY_THRESHOLDS,
         FLARE_BIOMARKER_PATTERNS,
+        HLA_DISEASE_ASSOCIATIONS,
     )
 
     # ── HLA Associations ──
@@ -141,7 +142,7 @@ def seed_knowledge(cm: AutoimmuneCollectionManager, embedder):
             "disease": info["disease"],
             "components": components,
             "thresholds": thresholds,
-            "interpretation": f"Higher scores indicate more active disease",
+            "interpretation": "Higher scores indicate more active disease",
             "monitoring_frequency": "Every 3-6 months in active disease",
         })
     if records:

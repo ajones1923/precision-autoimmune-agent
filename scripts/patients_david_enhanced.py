@@ -11,9 +11,12 @@ Adds ~12 documents spanning the 2019-2024 gap:
 """
 
 import os
+
 from pdf_engine import (
-    generate_progress_note, generate_lab_report, generate_imaging_report,
     PROVIDERS,
+    generate_imaging_report,
+    generate_lab_report,
+    generate_progress_note,
 )
 
 DAVID = {

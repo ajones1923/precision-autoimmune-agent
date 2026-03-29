@@ -66,9 +66,9 @@ st.warning(
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from config.settings import settings
 from config.logging import configure_logging
-from src.models import AutoimmunePatientProfile, AutoimmuneDisease
+from config.settings import settings
+from src.models import AutoimmuneDisease, AutoimmunePatientProfile
 
 # ── Logging setup ────────────────────────────────────────────────────────
 configure_logging(
@@ -82,13 +82,13 @@ configure_logging(
 @st.cache_resource(ttl=600)
 def init_services():
     """Initialize all backend services (cached)."""
-    from src.collections import AutoimmuneCollectionManager
-    from src.rag_engine import AutoimmuneRAGEngine
     from src.agent import AutoimmuneAgent
-    from src.document_processor import DocumentProcessor
+    from src.collections import AutoimmuneCollectionManager
     from src.diagnostic_engine import DiagnosticEngine
-    from src.timeline_builder import TimelineBuilder
+    from src.document_processor import DocumentProcessor
     from src.knowledge import KNOWLEDGE_VERSION
+    from src.rag_engine import AutoimmuneRAGEngine
+    from src.timeline_builder import TimelineBuilder
 
     # Collection manager
     cm = AutoimmuneCollectionManager(
@@ -1098,11 +1098,11 @@ with tabs[9]:
     # Quick stats
     st.subheader("Reference Data")
     from src.knowledge import (
-        HLA_DISEASE_ASSOCIATIONS,
         AUTOANTIBODY_DISEASE_MAP,
         BIOLOGIC_THERAPIES,
         DISEASE_ACTIVITY_THRESHOLDS,
         FLARE_BIOMARKER_PATTERNS,
+        HLA_DISEASE_ASSOCIATIONS,
     )
 
     col1, col2, col3, col4, col5 = st.columns(5)

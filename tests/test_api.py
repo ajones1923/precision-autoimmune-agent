@@ -15,11 +15,10 @@ import json
 import time
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
-from unittest.mock import MagicMock, patch, AsyncMock
+from unittest.mock import MagicMock, patch
 
 import pytest
 from fastapi.testclient import TestClient
-
 
 # ---------------------------------------------------------------------------
 # Fake / stub classes that replace real service objects
@@ -176,10 +175,10 @@ def client(_patch_state):
     Return a TestClient that skips the real lifespan (which would try to
     connect to Milvus and load models).
     """
-    from api.main import app
-
     # Override lifespan to be a no-op since _state is already patched
     from contextlib import asynccontextmanager
+
+    from api.main import app
 
     @asynccontextmanager
     async def _noop_lifespan(_app):
@@ -199,10 +198,10 @@ def auth_client(_patch_state):
     """
     Return a TestClient where API_KEY authentication is enabled.
     """
+    from contextlib import asynccontextmanager
+
     from api.main import app
     from config.settings import settings
-
-    from contextlib import asynccontextmanager
 
     @asynccontextmanager
     async def _noop_lifespan(_app):
@@ -706,8 +705,9 @@ class TestServiceNotInitialized:
     @pytest.fixture()
     def empty_client(self):
         """Client with empty _state (no services initialized)."""
-        from api.main import app
         from contextlib import asynccontextmanager
+
+        from api.main import app
 
         @asynccontextmanager
         async def _noop_lifespan(_app):
