@@ -328,7 +328,7 @@ precision_autoimmune_agent/
 
 ## License
 
-Part of the HCLS AI Factory platform. See the root repository for license terms.
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ## Author
 
